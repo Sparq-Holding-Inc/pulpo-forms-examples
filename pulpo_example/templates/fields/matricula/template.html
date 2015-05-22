@@ -1,0 +1,10 @@
+{%extends 'fields/field_template_base.html' %}
+{%block field%}
+    {% verbatim %}
+    <button style="border:none;background:none" ng-show="question.tooltip!=undefined && question.tooltip!=''" tooltip="{{question.tooltip}}">
+         <span class="glyphicon glyphicon-info-sign"></span>
+     </button>
+     <input  class="form-control"  type="text" pattern="[A-Z]{3}[0-9]{4}"  ng-model="question.answer[0]" 
+        ng-required="question.required && showValues[question.field_id]"    />   
+    {% endverbatim %} 
+{%endblock%}

@@ -1,0 +1,13 @@
+{%extends 'fields/field_template_base.html' %}
+{%block field%}
+    {% verbatim %} 
+    <button style="border:none;background:none" ng-show="question.tooltip!=undefined && question.tooltip!=''" tooltip="{{question.tooltip}}">
+        <span class="glyphicon glyphicon-info-sign"></span>
+    </button>  
+    <select  class="form-control"   ng-model="question.answer[0]"  
+    	ng-required="question.required && showValues[question.field_id]"
+    	ng-options="option.id as option.label for option in question.options"
+    	ng-change="updateDependencies(question.field_id)">
+    </select>   
+	{% endverbatim %} 
+{%endblock%}
